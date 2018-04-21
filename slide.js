@@ -21,10 +21,9 @@ const images = document.querySelectorAll('.slide-in');
 /*** SLIDE IMAGES FUNCTION ***/
 function slideImages(e) {
   images.forEach(image => {
-    // scroll through the img
-    const slideInAt = (window.scrollY + window.innerHeight) - (image.height / 4);
-    // bottom of the img
-    const imageBottom = image.offsetTop + image.height;
+    // window height at bottom of window
+    const slideInAt = (window.scrollY + window.innerHeight);
+    // window has scrolled into img 
     const isShown = slideInAt > image.offsetTop;
     if (isShown) {
       image.classList.add('active');
